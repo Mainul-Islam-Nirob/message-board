@@ -2,8 +2,11 @@
 <html>
 <head>
   <title><%= title %></title>
+  <link rel="stylesheet" href="/style.css">
+
 </head>
 <body>
+  <div class="container">
   <h1>Post a New Message</h1>
   <form method="POST" action="/new">
     <label>Name: <input type="text" name="messageUser" required></label><br>
@@ -11,5 +14,6 @@
     <button type="submit">Submit</button>
   </form>
   <a href="/">Back</a>
+  </div>
 </body>
 </html>
