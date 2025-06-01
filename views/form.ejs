@@ -1,19 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title><%= title %></title>
-  <link rel="stylesheet" href="/style.css">
+<%- include('partials/header') %>
 
-</head>
-<body>
-  <div class="container">
-  <h1>Post a New Message</h1>
-  <form method="POST" action="/new">
-    <label>Name: <input type="text" name="messageUser" required></label><br>
-    <label>Message: <input type="text" name="messageText" required></label><br>
-    <button type="submit">Submit</button>
-  </form>
-  <a href="/">Back</a>
-  </div>
-</body>
-</html>
+<h2>New Message</h2>
+<form method="POST" action="/new">
+  <label for="user">Your Name:</label>
+  <input type="text" id="user" name="messageUser" required>
+
+  <label for="text">Message:</label>
+  <input type="text" id="text" name="messageText" required>
+
+  <button type="submit">Send Message</button>
+</form>
+
+<%- include('partials/footer') %>

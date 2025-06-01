@@ -1,23 +1,13 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title><%= title %></title>
-  <link rel="stylesheet" href="/style.css">
+<%- include('partials/header') %>
 
-</head>
-<body>
-  <div class="container">
-  <h1><%= title %></h1>
-  <a href="/new">New Message</a>
-  <ul>
-    <% messages.forEach((msg, index) => { %>
-      <li>
-        <strong><%= msg.user %></strong>: <%= msg.text %> 
-        (<%= msg.added.toLocaleString() %>) 
-        <a href="/message/<%= index %>">[open]</a>
-      </li>
-    <% }) %>
-  </ul>
-  </div>
-</body>
-</html>
+<ul class="message-list">
+  <% messages.forEach((msg, index) => { %>
+    <li>
+      <strong><%= msg.user %></strong>: <%= msg.text %> 
+      <br><small><%= msg.added.toLocaleString() %></small>
+      <br><a class="open-link" href="/message/<%= index %>">[Open]</a>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('partials/footer') %>

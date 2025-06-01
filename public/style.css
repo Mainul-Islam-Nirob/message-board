@@ -1,92 +1,139 @@
-/* Reset some default styles */
+/* Base Reset */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+/* Body */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f2f4f8;
   color: #333;
-  padding: 2rem;
   line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
+
+/* Header */
+header {
+  background: #0077cc;
+  color: white;
+  padding: .5rem 0;
+  margin-bottom: 2rem;
+}
+
+.header-container {
+  max-width: 800px;
+  margin: auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 1rem;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Main Container */
 .container {
   max-width: 700px;
   margin: auto;
   background: white;
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  min-width: 350px
 }
 
-h1 {
-  margin-bottom: 1rem;
+/* Footer */
+footer {
+  background: #333;
+  color: white;
+  text-align: center;
+  padding: .5rem 0;
+  margin-top: 2rem;
+}
+
+.footer-container {
+  max-width: 800px;
+  margin: auto;
+}
+
+footer a {
+  color: white;
+  text-decoration: none;
+}
+
+footer a:hover {
   color: #0077cc;
+  text-decoration: underline;
 }
-
-ul {
-  list-style-type: none;
-  padding-left: 0;
+/* Messages */
+.message-list {
+  list-style: none;
   margin-top: 1rem;
 }
 
-li {
+.details-header {
+  text-align: center;
+}
+
+.message-list li {
   background: #eef6fb;
   padding: 1rem;
-  border-radius: 5px;
   margin-bottom: 1rem;
+  border-left: 4px solid #0077cc;
+  border-radius: 4px;
 }
 
-li a {
+.open-link {
   color: #0077cc;
-  text-decoration: none;
   font-size: 0.9rem;
+  text-decoration: none;
 }
 
-li a:hover {
+.open-link:hover {
   text-decoration: underline;
 }
 
+/* Forms */
 form label {
   display: block;
-  margin-bottom: 0.5rem;
+  margin-top: 1rem;
   font-weight: bold;
 }
 
 form input[type="text"] {
   width: 100%;
-  padding: 0.5rem;
-  margin-bottom: 1rem;
-  border-radius: 5px;
+  padding: 0.6rem;
+  margin-top: 0.4rem;
   border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
-button {
-  background: #0077cc;
-  color: white;
-  padding: 0.6rem 1.2rem;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background: #005fa3;
-}
-
-a.button-link {
-  display: inline-block;
+button, .button-link {
   margin-top: 1rem;
+  display: inline-block;
   background: #0077cc;
   color: white;
-  padding: 0.5rem 1rem;
+  border: none;
+  padding: 0.4rem 1.2rem;
+  border-radius: 4px;
+  cursor: pointer;
   text-decoration: none;
-  border-radius: 5px;
 }
 
-a.button-link:hover {
+button:hover, .button-link:hover {
   background: #005fa3;
 }
