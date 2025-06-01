@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+  <h1>Post a New Message</h1>
+  <form method="POST" action="/new">
+    <label>Name: <input type="text" name="messageUser" required></label><br>
+    <label>Message: <input type="text" name="messageText" required></label><br>
+    <button type="submit">Submit</button>
+  </form>
+  <a href="/">Back</a>
+</body>
+</html>

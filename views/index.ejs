@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= title %></title>
+</head>
+<body>
+  <h1><%= title %></h1>
+  <a href="/new">New Message</a>
+  <ul>
+    <% messages.forEach((msg, index) => { %>
+      <li>
+        <strong><%= msg.user %></strong>: <%= msg.text %> 
+        (<%= msg.added.toLocaleString() %>) 
+        <a href="/message/<%= index %>">[open]</a>
+      </li>
+    <% }) %>
+  </ul>
+</body>
+</html>
