@@ -14,5 +14,5 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 
 // Server
-const PORT = 3000;
+const port = process.env.PORT || 3000;
 app.listen(PORT, () => console.log(`Server running at http://localhost:${PORT}`));
