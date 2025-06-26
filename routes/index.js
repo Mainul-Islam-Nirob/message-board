@@ -1,13 +1,11 @@
 const express = require("express");
 const router = express.Router();
+const db = require("../db");
 
-const messages = [
-  { text: "Welcome to mini message board!", user: "Ridoy", added: new Date() },
-  { text: "Hello World!!", user: "Nirob", added: new Date() }
-];
 
 // Index Route
-router.get("/", (req, res) => {
+router.get("/", async (req, res) => {
+  const messages = await db.getAllMessages();
   res.render("index", { title: "Mini Messageboard", messages });
 });
 
@@ -17,15 +15,15 @@ router.get("/new", (req, res) => {
 });
 
 // Form Submission (POST)
-router.post("/new", (req, res) => {
+router.post("/new", async(req, res) => {
   const { messageUser, messageText } = req.body;
-  messages.push({ text: messageText, user: messageUser, added: new Date() });
+  await db.createMessage(messageUser, messageText);
   res.redirect("/");
 });
 
 // Message Details
-router.get("/message/:id", (req, res) => {
-  const message = messages[req.params.id];
+router.get("/message/:id", async(req, res) => {
+  const message = await db.getMessageById(req.params.id);
   if (!message) return res.status(404).send("Message not found.");
   res.render("message", { title: "Message Detail", message });
 });
