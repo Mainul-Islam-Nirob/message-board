@@ -1,7 +1,7 @@
 <%- include('partials/header') %>
 
 <h2 class="details-header">Message Details</h2>
-<p><strong>From:</strong> <%= message.user %></p>
+<p><strong>From:</strong> <%= message.user_name %></p>
 <p><strong>Message:</strong> <%= message.text %></p>
 <p><small>Sent at: <%= message.added.toLocaleString() %></small></p>
 <a class="button-link" href="/">← Back</a>

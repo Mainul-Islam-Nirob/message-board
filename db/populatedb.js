@@ -1,7 +1,13 @@
-require("dotenv").config();
 const { Pool } = require("pg");
+const connectionString = process.argv[2]; 
 
-const pool = new Pool({ connectionString: process.env.DATABASE_URL });
+if (!connectionString) {
+  console.error("❌ Please provide a database connection string as an argument.");
+  console.log("Usage: node db/populatedb.js <db-url>");
+  process.exit(1);
+}
+
+const pool = new Pool({ connectionString });
 
 const createTableQuery = `
   CREATE TABLE IF NOT EXISTS messages (
