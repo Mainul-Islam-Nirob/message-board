@@ -2,7 +2,12 @@
 require("dotenv").config();
 const { Pool } = require("pg");
 
-const pool = new Pool({connectionString: process.env.DATABASE_URL });
+const pool = new Pool({
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // Required for Railway PostgreSQL
+  },
+});
 
 async function getAllMessages() {
   const result = await pool.query("SELECT * FROM messages ORDER BY added DESC");

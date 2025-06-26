@@ -1,4 +1,4 @@
-# 📝 Mini Message Board
+# 📝 Mini Message Board - [See Live Here](https://message-board-production-8ede.up.railway.app/)	
 
 A simple and interactive message board built with **Node.js**, **Express**, and **EJS**. Users can view, submit, and explore individual messages in a minimal yet elegant interface.
 
@@ -26,6 +26,7 @@ A simple and interactive message board built with **Node.js**, **Express**, and 
 ## 📸 UI Overview
 
 ### 🔹 Homepage (`/`)
+
 - Displays all submitted messages
 - Each message shows:
   - 👤 Username
@@ -35,6 +36,7 @@ A simple and interactive message board built with **Node.js**, **Express**, and 
 - Link to submit a new message
 
 ### 🔹 New Message (`/new`)
+
 - Form with:
   - Input for author name
   - Textarea for message
@@ -43,6 +45,7 @@ A simple and interactive message board built with **Node.js**, **Express**, and 
 - Redirects to homepage after submission
 
 ### 🔹 Message Detail (`/message/:id`)
+
 - Shows full message with username and time
 
 ---
