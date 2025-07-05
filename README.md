@@ -1,4 +1,4 @@
-# 📝 Mini Message Board - [See Live Here](https://message-board-production-8ede.up.railway.app/)	
+# 📝 Mini Message Board - [See Live Here](https://message-board-aqtb.onrender.com/)	
 
 A simple and interactive message board built with **Node.js**, **Express**, and **EJS**. Users can view, submit, and explore individual messages in a minimal yet elegant interface.
 

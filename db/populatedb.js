@@ -18,13 +18,32 @@ const createTableQuery = `
   );
 `;
 
+const sampleMessages = [
+  { user: "Alice", text: "Hello, world!" },
+  { user: "Bob", text: "First post on the board!" },
+  { user: "Charlie", text: "Wishing everyone a great day!" },
+  { user: "Diana", text: "Don’t forget to smile 😊" },
+  { user: "Eve", text: "Love this message board!" },
+  { user: "Frank", text: "How's everyone doing?" },
+];
+
 async function init() {
   try {
     await pool.query(createTableQuery);
     console.log("✅ Table created or already exists.");
+
+    for (const message of sampleMessages) {
+      await pool.query(
+        "INSERT INTO messages (user_name, text) VALUES ($1, $2)",
+        [message.user, message.text]
+      );
+      console.log(`✅ Inserted message from ${message.user}`);
+    }
+
+    console.log("🎉 All messages inserted successfully.");
     process.exit();
   } catch (err) {
-    console.error("❌ Error creating table:", err);
+    console.error("❌ Error:", err);
     process.exit(1);
   }
 }
